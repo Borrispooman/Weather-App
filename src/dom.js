@@ -70,7 +70,19 @@ const DomController = (() => {
 
     mainContent.append(weatherDiv);
   };
-  return { displayWeather };
+
+  const displayNotFound = function () {
+    const mainContent = document.querySelector(".main-content");
+    mainContent.innerHTML = "";
+    const weatherDiv = document.createElement("div");
+    weatherDiv.className = "weather";
+    const header = document.createElement("h2");
+    header.className = "location-name";
+    header.textContent = "Location not found, please try another search.";
+    weatherDiv.append(header);
+    mainContent.append(weatherDiv);
+  };
+  return { displayWeather, displayNotFound };
 })();
 
 export default DomController;

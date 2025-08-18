@@ -10,7 +10,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   const weatherObj = await WeatherAPIController.getWeather(search);
   console.log(weatherObj);
   if (weatherObj === "NotFound") {
-    DomController.displayWeatherNotFound();
+    DomController.displayNotFound();
   } else {
     DomController.displayWeather(weatherObj);
     console.log("Else block trying to pass weatherObj to the function");
